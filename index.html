@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Sister! 🎂</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sky-decor" aria-hidden="true">
+        <span class="balloon balloon-pink"></span>
+        <span class="balloon balloon-lilac"></span>
+        <span class="balloon balloon-yellow"></span>
+        <span class="sparkle sparkle-one">✦</span>
+        <span class="sparkle sparkle-two">✦</span>
+        <span class="sparkle sparkle-three">♥</span>
+    </div>
+
+    <div class="panda panda-left" aria-hidden="true">
+        <span class="panda-ear ear-left"></span><span class="panda-ear ear-right"></span>
+        <div class="panda-head">
+            <span class="eye-patch patch-left"><i></i></span><span class="eye-patch patch-right"><i></i></span>
+            <span class="panda-snout"><i></i></span>
+        </div>
+        <div class="panda-body"><span class="panda-heart">♥</span></div>
+        <span class="panda-arm arm-left"></span><span class="panda-arm arm-right">👋</span>
+    </div>
+
+    <div class="panda panda-right" aria-hidden="true">
+        <span class="panda-ear ear-left"></span><span class="panda-ear ear-right"></span>
+        <div class="panda-head">
+            <span class="eye-patch patch-left"><i></i></span><span class="eye-patch patch-right"><i></i></span>
+            <span class="panda-snout"><i></i></span>
+        </div>
+        <div class="panda-body"><span class="panda-heart">♥</span></div>
+        <span class="panda-arm arm-left"></span><span class="panda-arm arm-right">🎈</span>
+    </div>
+
+    <main class="card" aria-labelledby="birthday-title">
+        <span class="eyebrow">A little celebration for you</span>
+        <div class="cake" aria-hidden="true">
+            <div class="flame"></div><div class="candle"></div><div class="cake-top"></div>
+            <div class="cake-base"><span></span><span></span><span></span></div>
+        </div>
+        <h1 id="birthday-title">Happy Birthday,<br><em>Sister!</em> 🎉</h1>
+        <p class="intro">Wishing you a year full of big dreams, sweet memories, and everything that makes you smile. 💖</p>
+        <section class="actions" aria-label="Birthday activities">
+            <button class="primary" id="surpriseButton" type="button">Open your surprise 🎁</button>
+            <a class="secondary action-link" href="cake.html">Make a wish &amp; blow the candles ✨</a>
+        </section>
+        <p id="surprise" class="surprise" aria-live="polite">Your birthday surprise is waiting…</p>
+
+        <!-- Replace each .photo-placeholder below with: <img src="your-photo.jpg" alt="A favourite memory"> -->
+        <section class="memory-wall" aria-labelledby="memory-title">
+            <div class="memory-heading">
+                <span>📸</span>
+                <h2 id="memory-title">Our little memory wall</h2>
+            </div>
+            <div class="photo-grid">
+                <figure class="polaroid photo-one">
+                    <div class="photo-placeholder photo-sun"><span>Photo 01</span><i>☀</i></div>
+                    <figcaption>A happy memory</figcaption>
+                </figure>
+                <figure class="polaroid photo-two">
+                    <div class="photo-placeholder photo-heart"><span>Photo 02</span><i>♥</i></div>
+                    <figcaption>Your sweetest smile</figcaption>
+                </figure>
+                <figure class="polaroid photo-three">
+                    <div class="photo-placeholder photo-star"><span>Photo 03</span><i>✦</i></div>
+                    <figcaption>Another beautiful day</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="reasons" aria-labelledby="reasons-title">
+            <h2 id="reasons-title">Three things to celebrate about you</h2>
+            <div class="reason-grid">
+                <article><span>🌟</span><strong>Your kindness</strong><small>You make ordinary days brighter.</small></article>
+                <article><span>💪</span><strong>Your strength</strong><small>You can do incredible things.</small></article>
+                <article><span>😄</span><strong>Your smile</strong><small>It is simply contagious.</small></article>
+            </div>
+        </section>
+    </main>
+    <div id="confetti" class="confetti" aria-hidden="true"></div>
+    <script src="logic.js"></script>
+</body>
+</html>
