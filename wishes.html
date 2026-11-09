@@ -7,6 +7,16 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="journey-page">
+  <div class="corner-stickers" aria-hidden="true">
+    <span class="corner-sticker sticker-balloon">🎈</span>
+    <span class="corner-sticker sticker-star">⭐</span>
+    <span class="corner-sticker sticker-gift">🎁</span>
+    <span class="corner-sticker sticker-heart">💖</span>
+  </div>
+  <button class="music-toggle" type="button" aria-pressed="false" aria-label="Play birthday song">
+    <span aria-hidden="true">♫</span><span class="music-label">Play song</span>
+  </button>
+  <p class="music-status" role="status" aria-live="polite"></p>
   <div class="celebration-sky" aria-hidden="true"><i class="balloon balloon-one"></i><i class="balloon balloon-two"></i><b class="star star-one">✦</b><b class="star star-three">♥</b></div>
   <main class="story-card wishes-card" aria-labelledby="wishes-title">
     <p class="step">Birthday story · 2 of 4</p>
@@ -19,5 +29,7 @@
     <a class="next-link" href="memories.html">Open our memories <span>→</span></a>
     <a class="back-link" href="index.html">← Back to the beginning</a>
   </main>
+  <script src="page-transitions.js"></script>
+  <script src="music.js"></script>
 </body>
 </html>

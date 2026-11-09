@@ -7,6 +7,16 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="journey-page welcome-page">
+  <div class="corner-stickers" aria-hidden="true">
+    <span class="corner-sticker sticker-balloon">🎈</span>
+    <span class="corner-sticker sticker-star">⭐</span>
+    <span class="corner-sticker sticker-gift">🎁</span>
+    <span class="corner-sticker sticker-heart">💖</span>
+  </div>
+  <button class="music-toggle" type="button" aria-pressed="false" aria-label="Play birthday song">
+    <span aria-hidden="true">♫</span><span class="music-label">Play song</span>
+  </button>
+  <p class="music-status" role="status" aria-live="polite"></p>
   <div class="celebration-sky" aria-hidden="true">
     <i class="balloon balloon-one"></i><i class="balloon balloon-two"></i><i class="balloon balloon-three"></i>
     <b class="star star-one">✦</b><b class="star star-two">✦</b><b class="star star-three">♥</b>
@@ -22,5 +32,7 @@
   </main>
   <div class="confetti" aria-hidden="true"></div>
   <script src="logic.js"></script>
+  <script src="page-transitions.js"></script>
+  <script src="music.js"></script>
 </body>
 </html>

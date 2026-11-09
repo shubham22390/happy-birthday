@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="cake.css">
 </head>
 <body>
+    <div class="corner-stickers" aria-hidden="true">
+        <span class="corner-sticker sticker-balloon">🎈</span>
+        <span class="corner-sticker sticker-star">⭐</span>
+        <span class="corner-sticker sticker-gift">🎁</span>
+        <span class="corner-sticker sticker-heart">💖</span>
+    </div>
+    <button class="music-toggle" type="button" aria-pressed="false" aria-label="Play birthday song">
+        <span aria-hidden="true">♫</span><span class="music-label">Play song</span>
+    </button>
+    <p class="music-status" role="status" aria-live="polite"></p>
     <main class="wish-card" aria-labelledby="wish-title">
         <a class="back-link" href="memories.html">← Back to your memories</a>
         <p class="story-step">Birthday story · 4 of 4</p>
@@ -38,5 +48,7 @@
     </main>
     <div class="confetti" id="confetti" aria-hidden="true"></div>
     <script src="cake.js"></script>
+    <script src="page-transitions.js"></script>
+    <script src="music.js"></script>
 </body>
 </html>
