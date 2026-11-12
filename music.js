@@ -1,56 +1,35 @@
 const musicButton = document.querySelector(".music-toggle");
 const musicStatus = document.querySelector(".music-status");
-const songId = "IpFX2vq8HKw";
-const songUrl = "https://www.youtube.com/watch?v=IpFX2vq8HKw";
+const songUrl = "https://www.youtube-nocookie.com/embed/IpFX2vq8HKw?autoplay=1&controls=1&playsinline=1&rel=0";
+const playerWindowName = "birthdayBluePlayer";
+const playerWindowFeatures = "popup=yes,width=420,height=270,resizable=yes,scrollbars=no";
+
+function openBluePlayer() {
+  const player = window.open(songUrl, playerWindowName, playerWindowFeatures);
+
+  if (!player) {
+    if (musicStatus) musicStatus.textContent = "Your browser blocked the song player. Allow pop-ups for this page to hear Blue.";
+    return;
+  }
+
+  try {
+    player.opener = null;
+    player.blur();
+    window.focus();
+  } catch (error) {
+    console.warn("The Blue player opened, but focus could not return to the birthday page.", error);
+  }
+
+  if (musicStatus) musicStatus.textContent = "Blue by yung kai is playing in its own player window. Keep that window open while you browse.";
+}
 
 if (musicButton) {
-  let isPlaying = false;
-  let playerPanel = null;
-
-  function updateButton() {
-    musicButton.setAttribute("aria-pressed", String(isPlaying));
-    musicButton.setAttribute("aria-label", isPlaying ? "Pause Blue by yung kai" : "Play Blue by yung kai");
-    const label = musicButton.querySelector(".music-label");
-    if (label) label.textContent = isPlaying ? "Pause Blue" : "Play Blue";
-  }
-
-  function startSong() {
-    playerPanel = document.createElement("aside");
-    playerPanel.className = "song-player";
-    playerPanel.setAttribute("aria-label", "Blue by yung kai video player");
-
-    const frame = document.createElement("iframe");
-    frame.title = "Blue by yung kai — official music video";
-    frame.src = "https://www.youtube-nocookie.com/embed/" + songId + "?autoplay=1&playsinline=1&rel=0";
-    frame.allow = "autoplay; encrypted-media; picture-in-picture; web-share";
-    frame.referrerPolicy = "strict-origin-when-cross-origin";
-    frame.allowFullscreen = true;
-
-    const link = document.createElement("a");
-    link.href = songUrl;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.textContent = "Open Blue by yung kai on YouTube";
-
-    playerPanel.append(frame, link);
-    document.body.append(playerPanel);
-    isPlaying = true;
-    if (musicStatus) musicStatus.textContent = "Playing Blue by yung kai. Use the player controls to pause or resume.";
-    updateButton();
-  }
-
-  function stopSong() {
-    playerPanel?.remove();
-    playerPanel = null;
-    isPlaying = false;
-    if (musicStatus) musicStatus.textContent = "Blue paused.";
-    updateButton();
-  }
-
-  musicButton.addEventListener("click", () => {
-    if (isPlaying) stopSong();
-    else startSong();
-  });
-
-  updateButton();
+  musicButton.removeAttribute("aria-pressed");
+  musicButton.setAttribute("aria-label", "Play Blue by yung kai in a separate player window");
+  const label = musicButton.querySelector(".music-label");
+  if (label) label.textContent = "Play Blue";
+  musicButton.addEventListener("click", openBluePlayer);
 }
+
+const welcomeLink = document.querySelector(".welcome-open");
+if (welcomeLink) welcomeLink.addEventListener("click", openBluePlayer, { capture: true });
