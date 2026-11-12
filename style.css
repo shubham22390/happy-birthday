@@ -128,3 +128,55 @@ body.page-leaving main { animation:page-exit .35s ease-in forwards!important; }
   .memories-controls { margin-top:18px; }
   .memory-back { bottom:14px; left:15px; }
 }
+/* Memories slide two: photo and handwritten note */
+.memory-slide[hidden] { display:none !important; }
+.memory-slide-two,.memory-slide-three { position:relative; width:100%; text-align:center; }
+.feel-hearts { margin:2px 0 3px; color:#d66a7d; font-size:1.1rem; letter-spacing:.35em; }
+.feel-title { margin:0 0 18px; color:#bd625d; font-family:"Segoe Script","Brush Script MT",cursive; font-size:clamp(1.8rem,4vw,2.65rem); font-weight:500; }
+.feel-layout { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); align-items:center; gap:clamp(16px,3vw,30px); width:min(100%,760px); margin:0 auto; }
+.feel-photo-column { display:grid; justify-items:center; gap:10px; }
+.feel-photo { width:min(100%,230px); margin:0; padding:5px; border:2px solid #d96c61; border-radius:4px; background:#fff; box-shadow:5px 5px 0 #eab3a7; }
+.feel-photo img { display:block; width:100%; aspect-ratio:4/5; border-radius:2px; object-fit:cover; object-position:center 30%; }
+.feel-click { display:inline-flex; align-items:center; gap:8px; min-height:38px; padding:8px 18px; border:0; border-radius:999px; color:#fff; background:#cf5949; font:700 .95rem "Trebuchet MS",Arial,sans-serif; cursor:pointer; }
+.feel-click:focus-visible { outline:3px solid var(--purple); outline-offset:3px; }
+.click-message { margin:0; color:#ad5b60; font-size:.85rem; font-weight:700; }
+.feel-letter { position:relative; max-height:350px; overflow:auto; padding:20px 20px 16px; color:#5a422f; background:linear-gradient(135deg,#f5d9a4,#e9c17d); box-shadow:0 8px 17px rgba(84,56,34,.17); font-family:Georgia,"Times New Roman",serif; font-size:.84rem; line-height:1.55; text-align:left; }
+.feel-letter::before { position:absolute; inset:8px; border:1px solid rgba(141,94,52,.26); content:""; pointer-events:none; }
+.feel-letter p { position:relative; margin:0 0 10px; }.feel-letter .letter-greeting { font-weight:700; }.feel-letter .letter-signoff { margin:15px 0 0; color:#a15b4f; font-style:italic; text-align:right; }
+/* Memories slide three: birthday portrait and kitten */
+.birthday-title { margin:2px 0 18px; color:#c15c5c; font-family:"Segoe Script","Brush Script MT",cursive; font-size:clamp(2rem,5vw,3.3rem); font-weight:500; }
+.birthday-layout { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(125px,.8fr); align-items:center; gap:clamp(12px,3vw,32px); width:min(100%,740px); margin:0 auto; }
+.birthday-photo { position:relative; width:min(100%,390px); margin:0 auto; padding:6px; border:2px solid #df786c; background:#fff; box-shadow:0 7px 0 rgba(222,119,106,.2); transform:rotate(-1deg); }
+.birthday-photo::before,.birthday-photo::after { position:absolute; z-index:2; color:#e66e69; font-size:1.8rem; content:"✿"; }.birthday-photo::before { top:-18px; left:-16px; }.birthday-photo::after { right:-16px; bottom:-17px; }
+.birthday-photo img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center 25%; }
+.photo-flower { position:absolute; z-index:3; color:#f28a83; font-size:1.4rem; }.flower-one { top:15%; right:-13px; }.flower-two { bottom:17%; left:-13px; }
+.birthday-kitten { position:relative; display:grid; min-height:230px; place-items:center; font-family:"Segoe UI Emoji","Apple Color Emoji",sans-serif; }
+.birthday-cat-face { font-size:clamp(6rem,12vw,9rem); filter:drop-shadow(0 9px 6px rgba(69,48,45,.16)); }
+.birthday-hat { position:absolute; top:7%; left:39%; z-index:2; font-size:clamp(2rem,4vw,3rem); transform:rotate(12deg); }
+.birthday-bouquet { position:absolute; right:-1%; bottom:10%; font-size:clamp(2rem,4vw,3rem); transform:rotate(-15deg); }
+.birthday-caption { margin:12px 0 0; color:#9b615f; font-size:.9rem; font-weight:700; }
+/* Final birthday card */
+.final-page { position:relative; display:grid; min-height:100vh; min-height:100svh; place-items:center; overflow:hidden; padding:28px 18px; color:#fff; background:radial-gradient(ellipse at 50% 45%,rgba(98,47,99,.48),transparent 54%),radial-gradient(ellipse at 16% 18%,rgba(131,54,98,.2),transparent 35%),#09070d; }
+.final-page::before { position:fixed; inset:0; z-index:0; background-image:radial-gradient(1px 1px at 10% 20%,rgba(255,255,255,.85) 50%,transparent 100%),radial-gradient(1px 1px at 28% 72%,rgba(255,226,246,.8) 50%,transparent 100%),radial-gradient(2px 2px at 77% 24%,rgba(255,255,255,.9) 50%,transparent 100%),radial-gradient(1px 1px at 88% 68%,rgba(255,211,239,.9) 50%,transparent 100%),radial-gradient(1px 1px at 56% 14%,rgba(255,255,255,.75) 50%,transparent 100%); background-size:330px 290px,410px 350px,500px 430px,370px 320px,450px 390px; content:""; pointer-events:none; }
+.final-page .music-toggle { color:#fff; border-color:rgba(255,255,255,.26); background:rgba(34,22,39,.78); }
+.final-card { position:relative; z-index:1; width:min(100%,760px); text-align:center; }
+.final-step { margin:0 0 14px; color:#e5c9e8; font-size:.75rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; }
+.final-heart { position:relative; display:grid; width:clamp(190px,31vw,270px); aspect-ratio:1; place-items:center; margin:0 auto 8px; }
+.final-heart-shape { color:#ffe9f4; font-size:clamp(12rem,29vw,18rem); line-height:.8; text-shadow:0 0 12px #fff,0 0 30px #f7a7d5,0 0 62px #c166d8; }
+.final-kitty { position:absolute; top:50%; left:50%; font-family:"Segoe UI Emoji","Apple Color Emoji",sans-serif; font-size:clamp(4rem,11vw,7.2rem); filter:drop-shadow(0 5px 6px rgba(42,18,39,.3)); transform:translate(-50%,-50%); }
+.final-card h1 { margin:8px 0 12px; color:#fff9fd; font-size:clamp(2.2rem,7vw,4.1rem); line-height:1.05; text-shadow:0 3px 20px rgba(251,154,210,.35); }
+.final-card h1 em { color:#ffc6e4; font-style:normal; }
+.final-message { margin:0 0 24px; color:#ffe3f1; font-size:clamp(1rem,3vw,1.35rem); font-weight:800; letter-spacing:.12em; }
+.final-replay { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:10px 22px; border:1px solid rgba(255,255,255,.28); border-radius:999px; color:#fff; background:rgba(255,255,255,.1); font-weight:700; text-decoration:none; }
+.final-replay:focus-visible { outline:3px solid #ffd2eb; outline-offset:4px; }
+@media (max-width:600px) {
+  .memories-interior { padding:86px 12px 68px; }
+  .feel-layout { grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:9px; }
+  .feel-photo { width:min(100%,170px); padding:3px; }
+  .feel-letter { max-height:330px; padding:15px 13px; font-size:.74rem; line-height:1.45; }
+  .feel-title { margin-bottom:14px; font-size:1.8rem; }
+  .birthday-layout { grid-template-columns:minmax(0,1.1fr) minmax(90px,.8fr); gap:8px; }
+  .birthday-kitten { min-height:190px; }.birthday-cat-face { font-size:clamp(4.8rem,18vw,6.7rem); }
+  .birthday-hat { top:10%; left:35%; font-size:1.8rem; }.birthday-bouquet { right:-8%; bottom:10%; font-size:1.8rem; }
+  .final-card h1 { font-size:clamp(2.2rem,10vw,3.2rem); }.final-step { font-size:.65rem; }
+}

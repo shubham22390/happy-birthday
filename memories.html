@@ -14,15 +14,53 @@
 
   <main class="welcome-frame memories-frame" aria-labelledby="memories-title">
     <div class="welcome-interior memories-interior">
-      <h1 class="memories-title" id="memories-title">YOUR BEAUTIFUL SMILE!</h1>
-
-      <section class="memories-showcase" aria-label="Photo memories">
-        <div class="memory-cat-illustration" aria-hidden="true">
-          <span class="memory-cat-face">&#x1F431;</span><span class="memory-cat-point">&#x1F449;</span>
+      <section class="memory-slide memory-slide-one" aria-label="Memory one">
+        <h1 class="memories-title" id="memories-title">YOUR BEAUTIFUL SMILE!</h1>
+        <div class="memories-showcase">
+          <div class="memory-cat-illustration" aria-hidden="true">
+            <span class="memory-cat-face">&#x1F431;</span><span class="memory-cat-point">&#x1F449;</span>
+          </div>
+          <figure class="showcase-photo">
+            <img class="showcase-image" src="844189586_1136011786044518_1339667936298903296_n.jpg" alt="Playful sideways selfie in an orange patterned outfit">
+          </figure>
         </div>
-        <figure class="showcase-photo">
-          <img id="showcaseImage" class="showcase-image" src="844189586_1136011786044518_1339667936298903296_n.jpg" alt="Playful sideways selfie in an orange patterned outfit">
-        </figure>
+      </section>
+
+      <section class="memory-slide memory-slide-two" aria-label="Memory two" hidden>
+        <div class="feel-hearts" aria-hidden="true">&#x1F497; &#x1F495; &#x1F497;</div>
+        <h2 class="feel-title">How I feel for you</h2>
+        <div class="feel-layout">
+          <div class="feel-photo-column">
+            <figure class="feel-photo">
+              <img src="846206971_1610883437193957_4491076504340182431_n.jpg" alt="Portrait in a blue patterned outfit with heart stickers">
+            </figure>
+            <button class="feel-click" id="clickMe" type="button" aria-expanded="false">&#x1F380; Click me</button>
+            <p class="click-message" id="clickMessage" hidden>You make every day brighter. &#x1F497;</p>
+          </div>
+          <article class="feel-letter">
+            <p class="letter-greeting">To my favorite person,</p>
+            <p>You make ordinary days feel warmer just by being yourself. Your kind heart, your laugh, and the way you care for everyone around you mean more than I can say.</p>
+            <p>I hope this new year brings you the same happiness you bring to the people who love you. You deserve every beautiful thing.</p>
+            <p class="letter-signoff">With all my love &#x2665;</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="memory-slide memory-slide-three" aria-label="Memory three" hidden>
+        <h2 class="birthday-title">Happy Birthday</h2>
+        <div class="birthday-layout">
+          <figure class="birthday-photo">
+            <img src="847452556_2637587086691244_3143761521648707467_n.jpg" alt="Portrait in red in front of a red curtain">
+            <span class="photo-flower flower-one" aria-hidden="true">&#x273F;</span>
+            <span class="photo-flower flower-two" aria-hidden="true">&#x273F;</span>
+          </figure>
+          <div class="birthday-kitten" aria-hidden="true">
+            <span class="birthday-hat">&#x1F380;</span>
+            <span class="birthday-cat-face">&#x1F431;</span>
+            <span class="birthday-bouquet">&#x1F490;</span>
+          </div>
+        </div>
+        <p class="birthday-caption">Today is all about you, KuchuPuchu! &#x1F497;</p>
       </section>
 
       <div class="memories-controls">
