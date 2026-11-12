@@ -3,34 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Our Happy Memories 📸</title>
+  <title>Your Beautiful Smile — Our Memories</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="journey-page">
-  <div class="corner-stickers" aria-hidden="true">
-    <span class="corner-sticker sticker-balloon">🎈</span>
-    <span class="corner-sticker sticker-star">⭐</span>
-    <span class="corner-sticker sticker-gift">🎁</span>
-    <span class="corner-sticker sticker-heart">💖</span>
-  </div>
-  <button class="music-toggle" type="button" aria-pressed="false" aria-label="Play birthday song">
-    <span aria-hidden="true">♫</span><span class="music-label">Play song</span>
+<body class="welcome-page memories-showcase-page">
+  <button class="music-toggle" type="button" aria-pressed="false" aria-label="Play Blue by yung kai">
+    <span aria-hidden="true">♫</span><span class="music-label">Play Blue</span>
   </button>
   <p class="music-status" role="status" aria-live="polite"></p>
-  <div class="celebration-sky" aria-hidden="true"><i class="balloon balloon-one"></i><i class="balloon balloon-three"></i><b class="star star-two">✦</b><b class="star star-three">♥</b></div>
-  <main class="story-card memory-card" aria-labelledby="memories-title">
-    <p class="step">Birthday story · 3 of 4</p>
-    <header class="page-heading"><p class="kicker">The little moments</p><h1 id="memories-title">Our favorite<br><em>memories</em> 📸</h1><p class="lead">Every picture holds a tiny piece of our story.</p></header>
-    <!-- Photos added to this project by the user. -->
-    <section class="memory-grid" aria-label="Three photo memories">
-      <figure class="memory"><img class="photo photo-two" src="844189586_1136011786044518_1339667936298903296_n.jpg" alt="Playful sideways selfie in an orange patterned outfit" loading="lazy"><figcaption>That silly laugh</figcaption></figure>
-      <figure class="memory"><img class="photo photo-three" src="846206971_1610883437193957_4491076504340182431_n.jpg" alt="Portrait in a blue patterned outfit with heart stickers" loading="lazy"><figcaption>A day to remember</figcaption></figure>
-      <figure class="memory"><img class="photo photo-four" src="847452556_2637587086691244_3143761521648707467_n.jpg" alt="Portrait in red in front of a red curtain" loading="lazy"><figcaption>Always together</figcaption></figure>
-    </section>
-    <p class="photo-note">Three little moments from our story.</p>
-    <a class="next-link" href="cake.html">One final surprise <span>→</span></a>
-    <a class="back-link" href="wishes.html">← Read the wishes again</a>
+
+  <main class="welcome-frame memories-frame" aria-labelledby="memories-title">
+    <div class="welcome-interior memories-interior">
+      <h1 class="memories-title" id="memories-title">YOUR BEAUTIFUL SMILE!</h1>
+
+      <section class="memories-showcase" aria-label="Photo memories">
+        <div class="memory-cat-illustration" aria-hidden="true">
+          <span class="memory-cat-face">&#x1F431;</span><span class="memory-cat-point">&#x1F449;</span>
+        </div>
+        <figure class="showcase-photo">
+          <img id="showcaseImage" class="showcase-image" src="844189586_1136011786044518_1339667936298903296_n.jpg" alt="Playful sideways selfie in an orange patterned outfit">
+        </figure>
+      </section>
+
+      <div class="memories-controls">
+        <span class="memory-count" id="memoryCount" aria-live="polite">1 / 3</span>
+        <a class="welcome-open" id="nextPhoto" href="cake.html">Next <span aria-hidden="true">&#x2192;</span></a>
+      </div>
+      <a class="memory-back" href="wishes.html">&#x2190; Back</a>
+    </div>
   </main>
+
+  <script src="memories.js"></script>
   <script src="page-transitions.js"></script>
   <script src="music.js"></script>
 </body>

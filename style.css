@@ -59,9 +59,7 @@ body.page-leaving main { animation:page-exit .35s ease-in forwards!important; }
 .sticker-bow { position:absolute; top:9%; right:21%; z-index:2; font-size:clamp(1.5rem,3vw,2rem); transform:rotate(17deg); }
 .sticker-flowers { position:absolute; right:-9%; bottom:5%; font-size:clamp(2.1rem,4vw,3rem); transform:rotate(-12deg); }
 .welcome-page .music-toggle { top:16px; right:16px; }
-.song-player { position:fixed; z-index:20; right:18px; bottom:18px; width:min(360px,calc(100vw - 36px)); padding:8px; border:1px solid rgba(255,255,255,.95); border-radius:18px; background:rgba(255,255,255,.97); box-shadow:0 14px 38px rgba(74,40,51,.26); }
-.song-player iframe { display:block; width:100%; aspect-ratio:16/9; border:0; border-radius:12px; background:#231f20; }
-.song-player a { display:block; padding:7px 4px 2px; color:#8f3158; font-size:.82rem; font-weight:700; text-align:center; text-decoration:none; }
+
 .memory:nth-child(3) { grid-column:1/-1; width:min(50%,360px); justify-self:center; }
 @media (max-width:600px) {
   .welcome-page { padding:12px; }
@@ -77,4 +75,56 @@ body.page-leaving main { animation:page-exit .35s ease-in forwards!important; }
   .sticker-bow { top:8%; right:17%; font-size:1.35rem; }
   .sticker-flowers { right:-12%; bottom:3%; font-size:1.8rem; }
   .song-player { right:10px; bottom:10px; width:min(360px,calc(100vw - 20px)); }
+}
+/* Second screen based on the supplied kitten postcard */
+.surprise-interior { min-height:clamp(560px,74vh,700px); }
+.surprise-content { position:relative; z-index:2; width:min(100%,720px); padding:42px 24px 150px; text-align:center; }
+.surprise-question { max-width:660px; margin:0 auto 38px; color:#ba6158; font-family:Georgia,"Times New Roman",serif; font-size:clamp(1.8rem,5vw,3.35rem); font-style:italic; font-weight:500; line-height:1.12; letter-spacing:-.025em; }
+.surprise-options { display:grid; grid-template-columns:1fr 1fr; gap:clamp(14px,4vw,46px); width:min(100%,540px); margin:0 auto; }
+.surprise-choice { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-width:130px; min-height:46px; padding:10px 22px; border-radius:999px; color:#fff; background:#cf5949; box-shadow:0 7px 15px rgba(151,57,48,.18); font-size:clamp(.92rem,2.2vw,1.05rem); font-weight:700; text-decoration:none; transition:transform .2s,box-shadow .2s,background .2s; }
+.surprise-choice:hover { transform:translateY(-3px); background:#bd493d; box-shadow:0 11px 19px rgba(151,57,48,.25); }
+.surprise-choice:focus-visible { outline:3px solid var(--purple); outline-offset:4px; }
+.surprise-choice:nth-child(3) { grid-column:1/-1; justify-self:center; }
+.surprise-sticker { bottom:30px; }
+.surprise-sticker-left { left:clamp(16px,4vw,42px); transform:rotate(-5deg); }
+.surprise-sticker-right { right:clamp(16px,4vw,42px); transform:rotate(5deg); }
+.surprise-hat { position:absolute; z-index:2; top:6%; left:8%; font-size:clamp(2rem,4.2vw,3.7rem); transform:rotate(-17deg); }
+.surprise-bouquet { position:absolute; right:-8%; bottom:6%; font-size:clamp(2rem,4vw,3rem); transform:rotate(-13deg); }
+.surprise-cheek { position:absolute; top:53%; width:16px; height:9px; border-radius:50%; background:#f18ca0; box-shadow:0 0 5px rgba(241,140,160,.45); }
+.surprise-cheek-left { left:25%; }.surprise-cheek-right { right:25%; }
+@media (max-width:600px) {
+  .surprise-interior { min-height:max(620px,calc(100svh - 42px)); }
+  .surprise-content { padding:42px 14px 155px; }
+  .surprise-question { margin-bottom:28px; font-size:clamp(1.75rem,8vw,2.5rem); }
+  .surprise-options { gap:13px 10px; }
+  .surprise-choice { min-width:0; min-height:42px; padding:9px 12px; font-size:.86rem; }
+  .surprise-sticker { bottom:14px; width:clamp(76px,24vw,104px); }
+  .surprise-hat { top:5%; left:5%; font-size:2rem; }
+  .surprise-bouquet { right:-12%; bottom:2%; font-size:1.8rem; }
+  .surprise-cheek { top:52%; width:10px; height:6px; }
+}
+/* One-photo-at-a-time memories screen */
+.memories-interior { min-height:clamp(590px,76vh,720px); padding:92px 24px 72px; }
+.memories-title { position:absolute; top:10%; left:0; width:100%; margin:0; color:#ba6158; font-family:Georgia,"Times New Roman",serif; font-size:clamp(1.7rem,4vw,2.7rem); font-style:italic; font-weight:500; letter-spacing:.035em; text-align:center; }
+.memories-showcase { display:grid; grid-template-columns:minmax(130px,.8fr) minmax(230px,1.2fr); align-items:center; gap:clamp(14px,3vw,34px); width:min(100%,690px); margin:30px auto 0; }
+.memory-cat-illustration { position:relative; display:grid; min-height:300px; place-items:center; font-family:"Segoe UI Emoji","Apple Color Emoji",sans-serif; }
+.memory-cat-face { font-size:clamp(7rem,13vw,10rem); line-height:1; filter:drop-shadow(0 10px 5px rgba(70,48,42,.16)); }
+.memory-cat-point { position:absolute; right:1%; bottom:23%; font-size:clamp(2.1rem,4vw,3rem); transform:rotate(-16deg); }
+.showcase-photo { width:min(100%,340px); margin:0 auto; padding:6px; border:2px solid #e45d50; border-radius:8px; background:#fff; box-shadow:0 13px 24px rgba(115,54,48,.2); }
+.showcase-image { display:block; width:100%; height:auto; aspect-ratio:4/5; border-radius:4px; object-fit:cover; object-position:center 30%; animation:memory-photo-enter .35s ease both; }
+.memories-controls { display:flex; align-items:center; justify-content:center; gap:14px; margin:21px auto 0; }
+.memory-count { min-width:42px; color:#9c665e; font-size:.82rem; font-weight:700; text-align:center; }
+.memory-back { position:absolute; bottom:20px; left:24px; color:#9c526c; font-size:.85rem; font-weight:700; text-decoration:none; }
+.memory-back:focus-visible { outline:3px solid var(--purple); outline-offset:4px; border-radius:4px; }
+@keyframes memory-photo-enter { from { opacity:.35; transform:translateY(5px) scale(.985); } to { opacity:1; transform:none; } }
+@media (max-width:600px) {
+  .memories-interior { min-height:max(620px,calc(100svh - 42px)); padding:88px 12px 70px; }
+  .memories-title { top:8%; padding:0 12px; font-size:clamp(1.45rem,6.4vw,2.15rem); }
+  .memories-showcase { grid-template-columns:minmax(80px,.65fr) minmax(0,1.35fr); gap:7px; width:100%; margin-top:24px; }
+  .memory-cat-illustration { min-height:230px; }
+  .memory-cat-face { font-size:clamp(4.5rem,18vw,6.5rem); }
+  .memory-cat-point { right:-3%; bottom:21%; font-size:1.8rem; }
+  .showcase-photo { width:min(100%,240px); padding:4px; }
+  .memories-controls { margin-top:18px; }
+  .memory-back { bottom:14px; left:15px; }
 }

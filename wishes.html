@@ -1,34 +1,38 @@
-gi<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Birthday Wishes 💌</title>
+  <title>Are You Ready For A Little Surprise?</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="journey-page">
-  <div class="corner-stickers" aria-hidden="true">
-    <span class="corner-sticker sticker-balloon">🎈</span>
-    <span class="corner-sticker sticker-star">⭐</span>
-    <span class="corner-sticker sticker-gift">🎁</span>
-    <span class="corner-sticker sticker-heart">💖</span>
-  </div>
-  <button class="music-toggle" type="button" aria-pressed="false" aria-label="Play birthday song">
-    <span aria-hidden="true">♫</span><span class="music-label">Play song</span>
+<body class="welcome-page surprise-page">
+  <button class="music-toggle" type="button" aria-pressed="false" aria-label="Play Blue by yung kai">
+    <span aria-hidden="true">♫</span><span class="music-label">Play Blue</span>
   </button>
   <p class="music-status" role="status" aria-live="polite"></p>
-  <div class="celebration-sky" aria-hidden="true"><i class="balloon balloon-one"></i><i class="balloon balloon-two"></i><b class="star star-one">✦</b><b class="star star-three">♥</b></div>
-  <main class="story-card wishes-card" aria-labelledby="wishes-title">
-    <p class="step">Birthday story · 2 of 4</p>
-    <header class="page-heading"><p class="kicker">A note from my heart</p><h1 id="wishes-title">For my wonderful<br><em>sister</em> 💌</h1><p class="lead">May every new day give you another reason to smile.</p></header>
-    <section class="wish-stack" aria-label="Birthday wishes">
-      <article class="wish"><b class="wish-icon">🌟</b><div><strong>Keep shining</strong><span>Never stop being the brilliant, kind person you are.</span></div></article>
-      <article class="wish"><b class="wish-icon">🌷</b><div><strong>Dream big</strong><span>May this year bring you courage, laughter, and beautiful surprises.</span></div></article>
-      <article class="wish"><b class="wish-icon">💖</b><div><strong>Feel so loved</strong><span>Today and always, you deserve every happy thing.</span></div></article>
-    </section>
-    <a class="next-link" href="memories.html">Open our memories <span>→</span></a>
-    <a class="back-link" href="index.html">← Back to the beginning</a>
+
+  <main class="welcome-frame surprise-frame" aria-labelledby="surprise-title">
+    <div class="welcome-interior surprise-interior">
+      <aside class="welcome-sticker surprise-sticker surprise-sticker-left" aria-hidden="true">
+        <span class="sticker-cat">&#x1F431;</span><span class="surprise-hat">&#x1F452;</span><span class="surprise-bouquet">&#x1F490;</span>
+      </aside>
+
+      <section class="surprise-content">
+        <h1 id="surprise-title" class="surprise-question">Are You Ready For A Little Surprise??</h1>
+        <div class="surprise-options" aria-label="Choose your answer">
+          <a class="surprise-choice" href="memories.html">Yes <span aria-hidden="true">&#x1F381;</span></a>
+          <a class="surprise-choice" href="memories.html">Of Course <span aria-hidden="true">&#x1F381;</span></a>
+          <a class="surprise-choice" href="memories.html">Definitely <span aria-hidden="true">&#x1F381;</span></a>
+        </div>
+      </section>
+
+      <aside class="welcome-sticker surprise-sticker surprise-sticker-right" aria-hidden="true">
+        <span class="sticker-cat">&#x1F431;</span><span class="surprise-cheek surprise-cheek-left"></span><span class="surprise-cheek surprise-cheek-right"></span>
+      </aside>
+    </div>
   </main>
+
   <script src="page-transitions.js"></script>
   <script src="music.js"></script>
 </body>
