@@ -1,127 +1,56 @@
 const musicButton = document.querySelector(".music-toggle");
 const musicStatus = document.querySelector(".music-status");
+const songId = "IpFX2vq8HKw";
+const songUrl = "https://www.youtube.com/watch?v=IpFX2vq8HKw";
 
-if (musicButton && musicStatus) {
-  const AudioContextConstructor = window.AudioContext || window.webkitAudioContext;
-  const songStateKey = "birthday-song-state";
-  const melody = [
-    523.25, 659.25, 783.99, 659.25, 587.33, 698.46, 880, 698.46,
-    523.25, 587.33, 659.25, 783.99, 698.46, 659.25, 587.33, 523.25,
-    440, 523.25, 659.25, 587.33, 523.25, 493.88, 523.25, 659.25
-  ];
-  let audioContext;
-  let noteTimer;
-  let savedSongState;
-  try {
-    savedSongState = JSON.parse(sessionStorage.getItem(songStateKey) || "null");
-  } catch (error) {
-    musicStatus.textContent = "The birthday song could not restore its place.";
-    console.error("Could not restore the birthday song position:", error);
-  }
-  let noteIndex = Number.isInteger(savedSongState?.noteIndex)
-    ? ((savedSongState.noteIndex % melody.length) + melody.length) % melody.length
-    : 0;
+if (musicButton) {
   let isPlaying = false;
-  const shouldResume = savedSongState?.isPlaying !== false;
-  const interactionEvents = ["pointerdown", "keydown"];
-
-  function saveSongState(playing = isPlaying) {
-    try {
-      sessionStorage.setItem(songStateKey, JSON.stringify({ noteIndex, isPlaying: playing }));
-    } catch (error) {
-      musicStatus.textContent = "The birthday song may restart when you change pages.";
-      console.error("Could not save the birthday song position:", error);
-    }
-  }
+  let playerPanel = null;
 
   function updateButton() {
     musicButton.setAttribute("aria-pressed", String(isPlaying));
-    musicButton.setAttribute("aria-label", isPlaying ? "Pause birthday song" : "Play birthday song");
-    musicButton.querySelector(".music-label").textContent = isPlaying ? "Pause song" : "Play song";
+    musicButton.setAttribute("aria-label", isPlaying ? "Pause Blue by yung kai" : "Play Blue by yung kai");
+    const label = musicButton.querySelector(".music-label");
+    if (label) label.textContent = isPlaying ? "Pause Blue" : "Play Blue";
   }
 
-  function playNextNote() {
-    if (!isPlaying || !audioContext || audioContext.state !== "running") return;
+  function startSong() {
+    playerPanel = document.createElement("aside");
+    playerPanel.className = "song-player";
+    playerPanel.setAttribute("aria-label", "Blue by yung kai video player");
 
-    const startTime = audioContext.currentTime;
-    const oscillator = audioContext.createOscillator();
-    const volume = audioContext.createGain();
-    oscillator.type = "triangle";
-    oscillator.frequency.setValueAtTime(melody[noteIndex], startTime);
-    volume.gain.setValueAtTime(0.0001, startTime);
-    volume.gain.exponentialRampToValueAtTime(0.13, startTime + 0.035);
-    volume.gain.exponentialRampToValueAtTime(0.0001, startTime + 0.34);
-    oscillator.connect(volume);
-    volume.connect(audioContext.destination);
-    oscillator.start(startTime);
-    oscillator.stop(startTime + 0.36);
+    const frame = document.createElement("iframe");
+    frame.title = "Blue by yung kai — official music video";
+    frame.src = "https://www.youtube-nocookie.com/embed/" + songId + "?autoplay=1&playsinline=1&rel=0";
+    frame.allow = "autoplay; encrypted-media; picture-in-picture; web-share";
+    frame.referrerPolicy = "strict-origin-when-cross-origin";
+    frame.allowFullscreen = true;
 
-    noteIndex = (noteIndex + 1) % melody.length;
-    saveSongState();
-    noteTimer = window.setTimeout(playNextNote, 410);
+    const link = document.createElement("a");
+    link.href = songUrl;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "Open Blue by yung kai on YouTube";
+
+    playerPanel.append(frame, link);
+    document.body.append(playerPanel);
+    isPlaying = true;
+    if (musicStatus) musicStatus.textContent = "Playing Blue by yung kai. Use the player controls to pause or resume.";
+    updateButton();
   }
 
-  function removeInteractionListeners() {
-    interactionEvents.forEach((eventName) => {
-      document.removeEventListener(eventName, startAfterInteraction);
-    });
-  }
-
-  async function startMusic() {
-    try {
-      audioContext ??= new AudioContextConstructor();
-      await audioContext.resume();
-      if (isPlaying || audioContext.state !== "running") return;
-
-      isPlaying = true;
-      musicStatus.textContent = "";
-      saveSongState();
-      updateButton();
-      removeInteractionListeners();
-      playNextNote();
-    } catch (error) {
-      musicStatus.textContent = "Your browser blocked automatic playback. Tap or press a key to start the birthday song.";
-      console.error("Could not start the birthday song:", error);
-    }
-  }
-
-  function startAfterInteraction() {
-    if (!isPlaying) startMusic();
-  }
-
-  async function toggleMusic() {
-    if (!isPlaying) {
-      await startMusic();
-      return;
-    }
-
+  function stopSong() {
+    playerPanel?.remove();
+    playerPanel = null;
     isPlaying = false;
-    window.clearTimeout(noteTimer);
-    saveSongState(false);
+    if (musicStatus) musicStatus.textContent = "Blue paused.";
     updateButton();
-    try {
-      await audioContext.suspend();
-      musicStatus.textContent = "";
-    } catch (error) {
-      musicStatus.textContent = "The birthday song could not pause. Check your browser's audio settings.";
-      console.error("Could not pause the birthday song:", error);
-    }
   }
 
-  if (!AudioContextConstructor) {
-    musicButton.disabled = true;
-    musicStatus.textContent = "Your browser does not support the birthday song.";
-  } else {
-    musicButton.addEventListener("click", toggleMusic);
-    interactionEvents.forEach((eventName) => {
-      document.addEventListener(eventName, startAfterInteraction);
-    });
-    updateButton();
-    if (shouldResume) {
-      musicStatus.textContent = "If the song does not start automatically, tap or press a key.";
-      startMusic();
-    } else {
-      removeInteractionListeners();
-    }
-  }
+  musicButton.addEventListener("click", () => {
+    if (isPlaying) stopSong();
+    else startSong();
+  });
+
+  updateButton();
 }

@@ -29,3 +29,52 @@ body.page-leaving main { animation:page-exit .35s ease-in forwards!important; }
 @media (max-width:560px) { .journey-page { padding:20px 14px; }.story-card { border-radius:26px; }.balloon-one { left:-15px; }.balloon-three { right:-14px; }.memory-grid { gap:10px; }.photo { min-height:105px; font-size:.73rem; }.memory { padding:5px 5px 9px; }.memory figcaption { font-size:.7rem; }.corner-sticker { width:46px; border-radius:15px; }.sticker-balloon { top:5%; left:2%; }.sticker-star { top:15%; right:2%; }.sticker-gift { right:2%; bottom:4%; }.sticker-heart { left:2%; bottom:5%; } }
 @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-delay:0s!important; transition-duration:.01ms!important; } }
 .memory-grid img.photo { display:block; width:100%; height:auto; min-height:0; aspect-ratio:4/5; object-fit:cover; object-position:center 30%; }
+
+/* Welcome postcard inspired by the supplied reference */
+.welcome-page { min-height:100vh; min-height:100svh; display:grid; place-items:center; padding:clamp(14px,2.5vw,32px); overflow-x:hidden; isolation:isolate; background:#ead9cd; }
+.welcome-page::before,.welcome-page::after { display:none; }
+.welcome-frame { width:min(100%,1060px); padding:clamp(10px,2vw,18px); border-radius:30px; background:conic-gradient(#e27a6d 25%,#fff7ef 0 50%,#e27a6d 0 75%,#fff7ef 0) 0 0 /28px 28px; box-shadow:0 25px 70px rgba(108,59,58,.2); }
+.welcome-interior { position:relative; display:grid; place-items:center; min-height:clamp(600px,78vh,730px); overflow:hidden; border:1px solid rgba(158,97,78,.12); border-radius:20px; background:radial-gradient(ellipse at 50% 0%,#fffdf9,#f7eee6 75%); }
+.welcome-content { position:relative; z-index:2; width:min(100%,500px); padding:48px 20px; text-align:center; }
+.hello-bubble { position:relative; display:inline-block; min-width:min(100%,340px); padding:12px 30px 10px; border-radius:999px; color:#fff; background:#cf5949; box-shadow:0 9px 18px rgba(130,54,46,.18); }
+.hello-bubble::after { position:absolute; right:4px; bottom:-9px; width:24px; height:20px; background:#cf5949; content:""; clip-path:polygon(0 0,100% 0,50% 100%); transform:rotate(-20deg); }
+.hello-bubble h1 { margin:0; color:#fff; font-size:clamp(2.1rem,6vw,3.3rem); line-height:1; letter-spacing:-.035em; }
+.hello-bubble p { margin:6px 0 0; color:#fff9f4; font-size:clamp(.85rem,2vw,1rem); font-weight:700; }
+.welcome-gift { position:relative; width:122px; height:132px; margin:28px auto 23px; filter:drop-shadow(0 12px 9px rgba(146,72,66,.14)); }
+.gift-bow { position:absolute; top:1px; left:50%; width:18px; height:18px; border-radius:50%; background:#cf493f; transform:translateX(-50%); }
+.gift-bow::before,.gift-bow::after { position:absolute; top:-5px; width:30px; height:23px; border:6px solid #cf493f; border-radius:80% 35% 80% 35%; content:""; }
+.gift-bow::before { left:-27px; transform:rotate(22deg); }.gift-bow::after { right:-27px; transform:rotate(-22deg) scaleX(-1); }
+.gift-knot { position:absolute; z-index:2; top:8px; left:50%; width:19px; height:19px; border-radius:50%; background:#e65c4d; transform:translateX(-50%); }
+.gift-lid { position:absolute; top:30px; left:2px; width:118px; height:18px; border-radius:4px; background:#ef9ca3; box-shadow:inset 0 -4px rgba(206,76,71,.13); }
+.gift-body { position:absolute; top:47px; left:13px; display:grid; width:96px; height:72px; place-items:center; border-radius:0 0 8px 8px; color:#d64e43; background:linear-gradient(90deg,#f4a6ad 0 40%,#d95045 40% 60%,#f4a6ad 60%); }
+.gift-body span { color:#d84f45; font-size:2.45rem; line-height:1; }
+.welcome-open { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:48px; padding:12px 30px; border:0; border-radius:999px; color:white; font:700 1rem "Trebuchet MS",Arial,sans-serif; text-decoration:none; background:#c95345; box-shadow:0 8px 16px rgba(151,57,48,.2); transition:transform .2s,box-shadow .2s; }
+.welcome-open:hover { transform:translateY(-3px); box-shadow:0 12px 21px rgba(151,57,48,.27); }
+.welcome-open:focus-visible { outline:3px solid var(--purple); outline-offset:4px; }
+.welcome-sticker { position:absolute; z-index:1; bottom:28px; display:grid; width:clamp(112px,17vw,176px); aspect-ratio:.86; place-items:center; border:5px solid white; border-radius:24px; background:linear-gradient(145deg,#fff,#efe2d9); box-shadow:0 13px 25px rgba(93,61,57,.18); font-family:"Segoe UI Emoji","Apple Color Emoji",sans-serif; }
+.sticker-cat-left { left:clamp(14px,4vw,42px); transform:rotate(-6deg); }
+.sticker-cat-right { right:clamp(14px,4vw,42px); transform:rotate(6deg); }
+.sticker-cat { font-size:clamp(4.8rem,9vw,7rem); line-height:1; filter:drop-shadow(0 6px 3px rgba(85,56,45,.14)); }
+.sticker-glasses { position:absolute; top:39%; left:22%; font-size:clamp(1.5rem,3vw,2.3rem); transform:rotate(-12deg); }
+.sticker-bow { position:absolute; top:9%; right:21%; z-index:2; font-size:clamp(1.5rem,3vw,2rem); transform:rotate(17deg); }
+.sticker-flowers { position:absolute; right:-9%; bottom:5%; font-size:clamp(2.1rem,4vw,3rem); transform:rotate(-12deg); }
+.welcome-page .music-toggle { top:16px; right:16px; }
+.song-player { position:fixed; z-index:20; right:18px; bottom:18px; width:min(360px,calc(100vw - 36px)); padding:8px; border:1px solid rgba(255,255,255,.95); border-radius:18px; background:rgba(255,255,255,.97); box-shadow:0 14px 38px rgba(74,40,51,.26); }
+.song-player iframe { display:block; width:100%; aspect-ratio:16/9; border:0; border-radius:12px; background:#231f20; }
+.song-player a { display:block; padding:7px 4px 2px; color:#8f3158; font-size:.82rem; font-weight:700; text-align:center; text-decoration:none; }
+.memory:nth-child(3) { grid-column:1/-1; width:min(50%,360px); justify-self:center; }
+@media (max-width:600px) {
+  .welcome-page { padding:12px; }
+  .welcome-frame { padding:9px; border-radius:22px; }
+  .welcome-interior { min-height:max(620px,calc(100svh - 42px)); border-radius:15px; }
+  .welcome-content { padding:46px 12px 150px; }
+  .hello-bubble { min-width:0; padding:12px 22px 10px; }
+  .hello-bubble h1 { font-size:clamp(2.1rem,10vw,3rem); }
+  .welcome-gift { margin:26px auto 20px; transform:scale(.9); }
+  .welcome-sticker { bottom:14px; width:clamp(76px,24vw,104px); border-width:4px; border-radius:17px; }
+  .sticker-cat { font-size:clamp(3.8rem,16vw,5rem); }
+  .sticker-glasses { top:39%; left:19%; font-size:1.45rem; }
+  .sticker-bow { top:8%; right:17%; font-size:1.35rem; }
+  .sticker-flowers { right:-12%; bottom:3%; font-size:1.8rem; }
+  .song-player { right:10px; bottom:10px; width:min(360px,calc(100vw - 20px)); }
+}
